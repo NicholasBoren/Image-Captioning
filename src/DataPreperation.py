@@ -309,9 +309,9 @@ class CoCoDataset(Dataset):
             # Convert image to tensor and pre-process using transform
             with Image.open(os.path.join(self.img_folder, path)) as image:
                 image = image.convert('RGB')
-                orig_image = np.array(PIL_image)
+                orig_image = np.array(image)
                 if self.transform is not None:
-                    image = self.transform(PIL_image)
+                    image = self.transform(image)
 
               # return original image and pre-processed image tensor
                 return orig_image, image
