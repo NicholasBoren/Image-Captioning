@@ -78,7 +78,7 @@ We are evaluating using the perplexity metric. With out character-level model no
 We noticed that despite Epoch 2 having a better loss and perplexity, it actually seems to have better captions at the end of Epoch 1. Here are some random pictures demonstrating this below. We are using our own human judgement to compare them.
 
 ### Epoch 1:
-
+![alt text](image.jpg)
 
 ### Epoch 2:
 
@@ -88,15 +88,15 @@ We speculate that perplexity may not be the best evaluation metric for this kind
 ## Future Steps
 When we first started this project, there was a lot we envisioned for it but could not accomplish it due to the short timeframe and limited GPU.
 
-### Stratification
-Implement Stratification of our training data split.
+### Full utilization of GPU
+Run torch.utils.bottleneck to figure out why the GPU isn’t being fully utilized.
 
 ### Character-Level Model Improvement
 
 The next steps we would like to look into is fixing our character-level model to actually produce sentence like captions. 
 
- ### Word-Level Model Results Exploration
-We also would like to look into why Epoch 1 of our word-level model seems to be doing better than out Epoch 2, despite Epoch 2 having a lower loss and perplexity. Maybe this may mean looking into a better evaluation metric that we explain later in the next paragraph.
+### Word-Level Model Results Exploration
+We also would like to look into why Epoch 1 of our word-level model seems to be doing better than out Epoch 2, despite Epoch 2 having a lower loss and perplexity. Maybe this may mean looking into a better evaluation metric that we explain later in the next paragraph. Maybe implementing stratification of our training data split might also help this.
 
 ### Validation Set and CIDEr Evaluation Metric
 
