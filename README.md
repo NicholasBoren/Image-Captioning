@@ -7,9 +7,9 @@ In this project we work on image to text with automatic generation of image capt
 
 These new components include adding on character level training. We then compare the two models, word-level and character-level, and compare them to each other.
 
-\<Insert Example image>
+![baseball](figures/baseball.png)
 
-\<Insert Example Caption Output from our Model>
+![Mirror Selfie](figures/mirror_selfie.png)
 
 ## Video
 Here is a video explaining our project (the same information stated below). We also have a live demo at the end with our finished model generating captions for a few images.
@@ -66,10 +66,10 @@ After running it we discovered that during inference time we were getting captio
 
 Here are the results for the character-level model at the end of the first epoch. According to these results it does much better than the word-level, but it's also not producing the right captions.
 
-| Character-Level  | Epoch 1    |
-| ----------- | -----------|
-| Loss        | 0.3383     |
-| Perplexity  | 1.0426    |
+| Character-Level  | Epoch 1     |
+|------------------|-------------|
+| Loss             | 0.3383      |
+| Perplexity       | 1.0426      |
 
 ## Results
 
@@ -78,10 +78,10 @@ We are evaluating using the perplexity metric. With out character-level model no
 We noticed that despite Epoch 2 having a better loss and perplexity, it actually seems to have better captions at the end of Epoch 1. Here are some random pictures demonstrating this below. We are using our own human judgement to compare them.
 
 ### Epoch 1:
-![alt text](image.jpg)
+![Epoch 1](figures/word_epoch1.png)
 
 ### Epoch 2:
-
+![Epoch 2](figures/word_epoch2.png)
 
 We speculate that perplexity may not be the best evaluation metric for this kind of task possibly, or that something is also going wrong with our word-level model, especially after the first epoch.
 

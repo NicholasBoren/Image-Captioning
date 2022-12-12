@@ -187,7 +187,8 @@ class CharVocabulary:
         coco_captions = COCO(self.annotations_file)
         counter = Counter()
         ids = coco_captions.anns.keys()
-        
+
+        #TODO: Go through this and figure out why char2idx isn't working
         def add_char(word, idx):
             """Add the given char  token to vocab"""
             for char in word:
@@ -222,6 +223,7 @@ class CharVocabulary:
         for word in words:
             idx = add_char(word, idx)
 
+    # TODO: Fix this to grab and return char level captions
     def __getitem__(self, char):
         if not char in self.char2idx:  
             return self.char2idx[self.unk_char]
@@ -250,6 +252,7 @@ class CoCoDataset(Dataset):
         self.batch_size = batch_size
         # if statement for word or char vocab
         self.use_word_vocab = use_word_vocab
+        print(use_word_vocab)
         if use_word_vocab:
             self.vocab = WordVocabulary(vocab_threshold, vocab_file, start_word,
               end_word, unk_word, annotations_file, vocab_from_file, verbose=False)
@@ -286,7 +289,8 @@ class CoCoDataset(Dataset):
             caption = []
             if self.use_word_vocab:
                 caption.append(self.vocab[self.vocab.start_word])
-                
+
+
             caption.extend([self.vocab[token] for token in tokens])
             if self.use_word_vocab:
                 caption.append(self.vocab[self.vocab.end_word])
