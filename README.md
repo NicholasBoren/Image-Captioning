@@ -1,4 +1,4 @@
-# Automatic Image Caption Generation
+# Automatic Generation of Image Captions
 Group: Anna Batra & Nicholas Boren
 
 ## Abstract
@@ -12,14 +12,16 @@ These new components include adding on character level training and using bi-LST
 \<Insert Example Caption Output from our Model>
 
 ## Video
-Here is a video explaining our project (the same information stated below). We also have a live demo with our finished model generating captions for a few images.
+Here is a video explaining our project (the same information stated below). We also have a live demo at the end with our finished model generating captions for a few images.
 
 ## Problem Statement
 
-We are exploring whether a bi-LSTM with mixed character and word level training will outperform just pure word level or character level training.
+We are exploring whether a two-layer bi-LSTM with mixed character and word level training model will outperform a single-layer pure word-level LSTM model and a single layer pure character-level LSTM model.
+
+As we do this, we will also explore if the single-layer pure word-level LSTM model will outperform the character-level one.
 
 ## Starter Code and Datasets
-We build off of the starter code provided by the [Udacity-Computer-Vision-Nanodegree-Program](https://github.com/sauravraghuvanshi/Udacity-Computer-Vision-Nanodegree-Program/tree/master/project_2_image_captioning_project). They use a CNN-RNN architecture model for automatically generating image captions. The network is originally trained on the Microsoft Common Objects in COntext (MS COCO) 2014 dataset. 
+We build off of the starter code provided by the [Udacity Computer Vision Nanodegree Program](https://github.com/sauravraghuvanshi/Udacity-Computer-Vision-Nanodegree-Program/tree/master/project_2_image_captioning_project). They use a CNN-RNN architecture model for automatically generating image captions. The network is originally trained on the Microsoft Common Objects in COntext (MS COCO) 2014 dataset. 
 
 We trained, validated, and tested on the [Microsoft Common Objects in COntext (MS COCO)](https://cocodataset.org/#home) 2017 images dataset. MS COCO is one of the public datasets most commonly used for image captioning.
 
@@ -37,9 +39,56 @@ In the pre-existing code, it makes use of a single layer LSTM, trained on the wo
  We will also implement our Decoder with a two-layer bi-LSTM in the same way as the POS tagging paper from our related work section. We will then compare it to our word level and character level models using perplexity as our metric.
 
 ## Experiments/Evaluation
-Explain our hyperparameters and resulting captions for each of the three models.
 
-\<A few pictures from each of the three models (are we able to get captions for the same pictures?)>
+### Hyper-parameters
+
+Here are the hyper-parameters we used for our models:
+| Hyper-parameters  | Word-Level    | Character-Level   | Mixed Word & Character Level (Bi-LSTMs) | 
+| -----------       | -----------   | --                | -----                         |
+| Batch Size        | 32            | 10                | s|
+| Vocab Threshold   | 6             | 6                 |s|
+| Embedding Size    | 512           | 512               |s|
+| Hidden Size       | 512           | 512               |s|
+| Number of Epochs  | 10            | 1                 |
+
+### Word-Level Model
+
+For the word-level model, we let it run until the end of 3 epochs. The model took about _____ time to run, and we noticed that it actually did it's best in the 2nd epoch so we stopped it from running more.
+
+Here are the results for the word-level model at the end of each epoch. We can see that it does the best at the end of the second epoch with a loss of 1.8976 and a perplexity of 6.66964.
+
+| Word-Level  | Epoch 1    | Epoch 2   | Epoch 3 | 
+| ----------- | -----------| --        | -----   |
+| Loss        | 2.2183     | 1.8976    | 2.0530  |
+| Perplexity  | 9.19188    | 6.66964   | 7.79131 |
+
+Here's a picture 
+
+### Character-Level Model
+
+For the word-level model, we let it run until the end of 3 epochs. The model took about _____ time to run, and we noticed that it actually did it's best in the 2nd epoch so we stopped it from running more.
+
+Here are the results for the word-level model at the end of each epoch. We can see that it does the best at the end of the second epoch with a loss of 1.8976 and a perplexity of 6.66964.
+
+| Word-Level  | Epoch 1    | Epoch 2   | Epoch 3 | 
+| ----------- | -----------| --        | -----   |
+| Loss        | 2.2183     | 1.8976    | 2.0530  |
+| Perplexity  | 9.19188    | 6.66964   | 7.79131 |
+
+Here's a picture 
+
+### Mixed Word & Character-Level Model (Bi-LSTMs)
+
+For the word-level model, we let it run until the end of 3 epochs. The model took about _____ time to run, and we noticed that it actually did it's best in the 2nd epoch so we stopped it from running more.
+
+Here are the results for the word-level model at the end of each epoch. We can see that it does the best at the end of the second epoch with a loss of 1.8976 and a perplexity of 6.66964.
+
+| Word-Level  | Epoch 1    | Epoch 2   | Epoch 3 | 
+| ----------- | -----------| --        | -----   |
+| Loss        | 2.2183     | 1.8976    | 2.0530  |
+| Perplexity  | 9.19188    | 6.66964   | 7.79131 |
+
+Here's a picture 
 
 ## Results
 
