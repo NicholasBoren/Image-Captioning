@@ -18,6 +18,8 @@ Here is a video explaining our project (the same information stated below). We a
 
 We are exploring whether a single-layer word-level LSTM model outperforms a character-level one.
 
+Originally were also exploring whether a two-layer bi-LSTM with word + character level embeddings would perform better than a single-layer word model. We also hoped to make use of the validation set and use CIDEr as an evaluation metric.
+
 ## Starter Code, Datasets, and Related Work
 We build off of the starter code provided by the [Udacity Computer Vision Nanodegree Program](https://github.com/sauravraghuvanshi/Udacity-Computer-Vision-Nanodegree-Program/tree/master/project_2_image_captioning_project). They use a CNN-RNN architecture model for automatically generating image captions. The network is originally trained on the Microsoft Common Objects in COntext (MS COCO) 2014 dataset. 
 
@@ -73,9 +75,9 @@ Here are the results for the character-level model at the end of the first epoch
 
 ## Results
 
-We are evaluating using the perplexity metric. With out character-level model not working, we cannot really compare it with our word-level. However, we can compare our word-level models under the different epochs at inference time.
+We are evaluating using the perplexity metric. With our character-level model not working, we cannot really compare it with our word-level. However, we can compare our word-level models under the different epochs at inference time.
 
-We noticed that despite Epoch 2 having a better loss and perplexity, it actually seems to have better captions at the end of Epoch 1. Here are some random pictures demonstrating this below. We are using our own human judgement to compare them.
+We noticed that despite Epoch 2 having a better loss and perplexity, it actually seems to have better captions at the end of Epoch 1. We used our own human judgements to compare them.
 
 ### Epoch 1:
 ![Epoch 1](figures/word_epoch1.png)
@@ -110,7 +112,7 @@ This paper [ExpansionNet v2: Block Static Expansion in fast end to end training 
 
 ### Mixed Word and Character Level training with bi-LSTMs
 
-The paper [Multilingual Part-of-Speech Tagging with Bidirectional Long Short-Term Memory Models and Auxiliary Loss](https://paperswithcode.com/paper/multilingual-part-of-speech-tagging-with) explores using bi-LSTMs for POS tagging. They use a two-layer bi-LSTM, where the first is character level and the second is both character level and word level. This paper found out that this model does better than just word level. This heavily influenced us in choosing to create a decoder like this, as it may possibly improve our model as well. Having run into the issue with the character-level model
+The paper [Multilingual Part-of-Speech Tagging with Bidirectional Long Short-Term Memory Models and Auxiliary Loss](https://paperswithcode.com/paper/multilingual-part-of-speech-tagging-with) explores using bi-LSTMs for POS tagging. They use a two-layer bi-LSTM, where the first is character level and the second is both character level and word level. This paper found out that this model does better than just word level. This heavily influenced us in choosing to create a decoder like this, as it may possibly improve our model as well. Having run into the issue with the character-level model, we did have much time to realize this possibility.
 
 ### Interactive Website
 
