@@ -15,7 +15,6 @@ import math
 import numpy as np
 from collections import Counter
 import nltk
-nltk.download('punkt')
 import torch
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
@@ -363,7 +362,8 @@ def get_loader(transform,
       use_word_vocab: If True we use WordVocabulary, if False, we use CharVocabulary
     """
     assert mode in ['train', 'test'], "mode must be one of 'train' or 'test'."
-    if vocab_from_file == False: 
+    nltk.download('punkt')
+    if vocab_from_file == False:
         assert mode == 'train', "To generate vocab from captions file, must be in training mode (mode='train')."
         # Based on mode (train, val, test), obtain img_folder and annotations_file.
 
@@ -386,6 +386,7 @@ def get_loader(transform,
         annotations_file = os.path.join(annotations_file, 'image_info_test2017.json')
 
     # COCO caption dataset.
+    nltk.download('punkt')
     dataset = CoCoDataset(transform=transform,
                           mode=mode,
                           batch_size=batch_size,
