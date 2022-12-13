@@ -14,7 +14,7 @@ These new components include adding on character level training. We then compare
 ## Video
 Here is a video explaining our project (the same information stated below). We also have a live demo at the end with our finished model generating captions for a few images.
 
-[Video Link Here](https://washington.zoom.us/rec/share/e2eYZfAGLVuVWazyBpWHZWUkP73iDXv27vaMXPfxxCbGT6x1wct_xToz6dxR-B4e.yc_ozvs5A0uXg447?startTime=1670886307000)
+[Video Link Here](https://washington.zoom.us/rec/share/x5e1rHeAELIOtlOl1Tq3kaelEl6jOWpwaStmosJ3xwSa28FmHjmN6x9ugiDs3b6l.NOpSw0t-hF1pcAJ5?startTime=1670909494000)
 
 ## Problem Statement
 
