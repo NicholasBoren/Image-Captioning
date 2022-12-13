@@ -14,6 +14,8 @@ These new components include adding on character level training. We then compare
 ## Video
 Here is a video explaining our project (the same information stated below). We also have a live demo at the end with our finished model generating captions for a few images.
 
+[Video Link Here](https://washington.zoom.us/rec/share/e2eYZfAGLVuVWazyBpWHZWUkP73iDXv27vaMXPfxxCbGT6x1wct_xToz6dxR-B4e.yc_ozvs5A0uXg447?startTime=1670886307000)
+
 ## Problem Statement
 
 We are exploring whether a single-layer word-level LSTM model outperforms a character-level one.
